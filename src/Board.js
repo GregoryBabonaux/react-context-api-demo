@@ -66,9 +66,15 @@ const topics = [
   }
 ];
 
-const Board = ({ currentUser }) => (
-  <Topics topics={topics} currentUser={currentUser} />
-);
+class Board extends React.PureComponent {
+  render() {
+    const { props: { currentUser } } = this;
+
+    return (
+      <Topics topics={topics} currentUser={currentUser} />
+    );
+  }
+}
 
 Board.propTypes = {
   currentUser: number,

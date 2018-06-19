@@ -75,8 +75,8 @@ class Board extends React.PureComponent {
     const { props: { currentUser } } = this;
 
     return (
-      <BoardContext.Provider value={{ currentUser: currentUser }}>
-        <Topics topics={topics} currentUser={currentUser} />
+      <BoardContext.Provider value={{ currentUser }}>
+        <Topics topics={topics} />
       </BoardContext.Provider>
     );
   }

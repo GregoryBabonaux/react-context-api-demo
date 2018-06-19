@@ -9,7 +9,7 @@ const Post = ({ post }) => (
     <p>
       <i>{post.message}</i>
     </p>
-    <BoardContext.Consumer>{({ currentUser}) => 
+    <BoardContext.Consumer>{({ currentUser }) => 
       <If condition={post._user._id === currentUser}>
         <Then>
           <div>
@@ -17,7 +17,9 @@ const Post = ({ post }) => (
           </div>
         </Then>
         <Else>
-          Un message offert avec beaucoup de sagacité par {post._user.username}
+          <div>
+            Un message offert avec beaucoup de sagacité par {post._user.username}
+          </div>
         </Else>
       </If>
     }

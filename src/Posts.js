@@ -1,12 +1,12 @@
 import React from 'react';
 import Post from './Post';
 
-import { array, number } from 'prop-types';
+import { array } from 'prop-types';
 
-const Posts = ({ posts, currentUser }) => (
+const Posts = ({ posts }) => (
   <React.Fragment>
     {posts.map((post) => (
-        <Post key={post.id} post={post} currentUser={currentUser} />
+        <Post key={post.id} post={post} />
       ))
     }
   </React.Fragment>
@@ -14,7 +14,6 @@ const Posts = ({ posts, currentUser }) => (
 
 Posts.propTypes = {
   posts: array,
-  currentUser: number,
 };
 
 export default Posts;

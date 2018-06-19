@@ -66,12 +66,18 @@ const topics = [
   }
 ];
 
+export const BoardContext = React.createContext({
+  currentUser: null,
+});
+
 class Board extends React.PureComponent {
   render() {
     const { props: { currentUser } } = this;
 
     return (
-      <Topics topics={topics} currentUser={currentUser} />
+      <BoardContext.Provider value={{ currentUser: currentUser }}>
+        <Topics topics={topics} currentUser={currentUser} />
+      </BoardContext.Provider>
     );
   }
 }

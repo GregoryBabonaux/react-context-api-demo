@@ -1,16 +1,16 @@
 import React from 'react';
 import Posts from './Posts';
 
-import { array, number } from 'prop-types';
+import { array } from 'prop-types';
 
 
-const Topics = ({ topics, currentUser }) => (
+const Topics = ({ topics }) => (
   <React.Fragment>
     { topics.map((topic) => (
       <div key={topic.id}>
         <h1>Encore un débat intéressant sur JeVisDesHauts.com !</h1>
         <h2>{topic.title}</h2>
-        <Posts posts={topic.posts} currentUser={currentUser} />
+        <Posts posts={topic.posts} />
       </div>
       ))
     }
@@ -19,7 +19,6 @@ const Topics = ({ topics, currentUser }) => (
 
 Topics.propTypes = {
   topics: array,
-  currentUser: number,
 };
 
 export default Topics;

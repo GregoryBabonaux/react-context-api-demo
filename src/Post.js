@@ -16,7 +16,7 @@ const Post = ({ post, currentUser }) => (
         </div>
       </Then>
       <Else>
-        Un message offert avec beaucoup de sagacité par post._user.username
+        Un message offert avec beaucoup de sagacité par {post._user.username}
       </Else>
     </If>
 
